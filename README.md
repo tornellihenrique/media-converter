@@ -2,6 +2,13 @@
 
 A handy Python application that allows you to convert images, audio, and video files to various formats directly from the file explorer. Simply right-click on a media file, select the desired conversion option, and the conversion happens instantly.
 
+Convert your media files directly from the context menu:
+<img src="images/context_menu_image.png" width="400">
+<img src="images/context_menu_audio.png" width="400">
+
+The CMD window provides real-time feedback during video/audio conversions:
+<img src="images/context_menu_video.png" width="600">
+
 ## **Features**
 
 - **Seamless Integration**: Integrates into the Windows 10/11 context menu for quick access.
