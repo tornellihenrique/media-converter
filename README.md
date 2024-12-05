@@ -4,7 +4,7 @@ A handy Python application that allows you to convert images, audio, and video f
 
 ## **Features**
 
-- **Seamless Integration**: Integrates into the Windows 11 context menu for quick access.
+- **Seamless Integration**: Integrates into the Windows 10/11 context menu for quick access.
 - **Image Conversion**: Convert images to JPEG or PNG formats.
 - **Audio Conversion**: Convert audio files to MP3 or WAV formats.
 - **Video Conversion**: Convert videos to MP4 or AVI formats.
