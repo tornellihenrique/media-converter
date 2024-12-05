@@ -4,13 +4,13 @@ A handy Python application that allows you to convert images, audio, and video f
 
 Convert your media files directly from the context menu:
 
-<img src="images/context_menu_image.png" width="400">
+![Context Menu Image](images/context_menu_image.png)
 
-<img src="images/context_menu_audio.png" width="400">
+![Context Menu Audio](images/context_menu_audio.png)
 
 The CMD window provides real-time feedback during video/audio conversions:
 
-<img src="images/context_menu_video.png" width="600">
+![Context Menu Video](images/context_menu_video.png)
 
 ## **Features**
 
