@@ -68,15 +68,16 @@ The CMD window provides real-time feedback during video/audio conversions:
 ### **Converting Files**
 
 1. **Right-Click on a Media File**: Supported file types are listed below.
-2. **Select Conversion Option**:
+2. **Select an Option**:
    - For images: **Convert Image > Convert to JPEG/PNG**.
    - For audio: **Convert Audio > Convert to MP3/WAV**.
-   - For video: **Convert Video > Convert to MP4/AVI**.
-3. **Wait for Conversion**:
-   - A CMD window will appear showing the conversion progress.
+   - For convert video: **Convert Video > Convert to MP4/AVI**.
+   - For compress video: **Compress Video**.
+3. **Wait for Processing**:
+   - A CMD window will appear showing the progress.
    - After completion, press any key to exit the CMD window.
-4. **Find Your Converted File**:
-   - The converted file will be in the same directory as the original file.
+4. **Find Your Output File**:
+   - The output file will be in the same directory as the original file.
 
 ### **Supported File Types**
 
@@ -86,7 +87,7 @@ The CMD window provides real-time feedback during video/audio conversions:
 
 ### **Logs**
 
-- Conversion logs are stored in `convert_media.log` in your home directory (`C:\Users\YourUsername\convert_media.log`).
+- Conversion logs are stored in `convert_media.log` and `compress_video.log` in your home directory (`C:\Users\YourUsername\...`).
 
 ## **Project Structure**
 
@@ -94,6 +95,7 @@ The CMD window provides real-time feedback during video/audio conversions:
 media-converter/
 │
 ├── convert_media.py           # Python script for handling conversions
+├── compress_video.py          # Python script for handling compressions
 ├── requirements.txt           # Python dependencies
 ├── setup_registry.bat         # Batch script to add registry entries
 ├── remove_registry.bat        # Batch script to remove registry entries
