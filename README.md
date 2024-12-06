@@ -1,12 +1,14 @@
 # **Media Converter with Context Menu Integration**
 
-A handy Python application that allows you to convert images, audio, and video files to various formats directly from the file explorer. Simply right-click on a media file, select the desired conversion option, and the conversion happens instantly.
+A Python tool that lets you convert or compress images, audio, and video files directly from the Windows File Explorer context menu. Just right-click a supported file, select the desired action, and the process runs instantly.
 
 Convert your media files directly from the context menu:
 
 ![Context Menu Image](images/context_menu_image.png)
 
 ![Context Menu Audio](images/context_menu_audio.png)
+
+![Context Menu Compress Video](images/context_menu_compress_video.png)
 
 The CMD window provides real-time feedback during video/audio conversions:
 
@@ -18,6 +20,7 @@ The CMD window provides real-time feedback during video/audio conversions:
 - **Image Conversion**: Convert images to JPEG or PNG formats.
 - **Audio Conversion**: Convert audio files to MP3 or WAV formats.
 - **Video Conversion**: Convert videos to MP4 or AVI formats.
+- **Video Compression**: Compress any MP4 or AVI videos.
 - **Silent Operation**: Executes conversions without cluttering your screen with command windows.
 - **Logging**: Detailed logs are stored in the user's home directory for auditing and debugging.
 - **Easy Setup and Removal**: Simple batch scripts to install and uninstall the context menu entries.

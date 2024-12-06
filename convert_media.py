@@ -71,7 +71,7 @@ if __name__ == "__main__":
     _, file_extension = os.path.splitext(file_path)
     file_extension = file_extension.lower()
 
-    if file_extension in [".png", ".jpg", ".jpeg", ".bmp", ".tiff"]:
+    if file_extension in [".png", ".jpg", ".jpeg", ".bmp", ".tiff", ".webp"]:
         convert_image(file_path, output_extension)
     elif file_extension in [".mp3", ".wav", ".ogg", ".flac", ".aac", ".mp4", ".avi", ".mkv", ".mov"]:
         convert_media(file_path, output_extension)

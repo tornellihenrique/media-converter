@@ -5,6 +5,7 @@ SET "SCRIPT_DIR=%SCRIPT_DIR:~0,-1%"  REM Remove trailing backslash if present
 
 REM Define paths
 SET "SCRIPT_PATH=%SCRIPT_DIR%\convert_media.py"
+SET "COMPRESS_SCRIPT_PATH=%SCRIPT_DIR%\compress_video.py"
 
 REM Detect the full path of python.exe
 FOR /F "delims=" %%I IN ('where python.exe') DO SET "PYTHON_PATH=%%I"
@@ -16,7 +17,7 @@ IF NOT DEFINED PYTHON_PATH (
     exit /b
 )
 
-:: Create context menu for specific file types
+:: Create context menu
 
 :: IMAGE FILES
 for %%X in (jpg jpeg png bmp tiff webp jfif) do (
@@ -34,6 +35,12 @@ for %%X in (mp3 wav ogg flac aac) do (
 for %%X in (mp4 avi mkv mov) do (
     reg add "HKCR\SystemFileAssociations\.%%X\shell\Convert Video" /v "MUIVerb" /d "Convert Video" /f
     reg add "HKCR\SystemFileAssociations\.%%X\shell\Convert Video" /v "SubCommands" /d "Convert.Video.MP4;Convert.Video.AVI" /f
+)
+
+:: COMPRESS VIDEO FILES
+for %%X in (mp4 avi) do (
+    reg add "HKCR\SystemFileAssociations\.%%X\shell\Compress Video" /v "MUIVerb" /d "Compress Video" /f
+    reg add "HKCR\SystemFileAssociations\.%%X\shell\Compress Video\command" /ve /t REG_EXPAND_SZ /d "\"%PYTHON_PATH%\" \"%COMPRESS_SCRIPT_PATH%\" \"%%1\"" /f
 )
 
 :: Create command store entries
