@@ -40,8 +40,23 @@ for %%X in (mp4 avi mkv mov) do (
 :: COMPRESS VIDEO FILES
 for %%X in (mp4 avi) do (
     reg add "HKCR\SystemFileAssociations\.%%X\shell\Compress Video" /v "MUIVerb" /d "Compress Video" /f
-    reg add "HKCR\SystemFileAssociations\.%%X\shell\Compress Video\command" /ve /t REG_EXPAND_SZ /d "\"%PYTHON_PATH%\" \"%COMPRESS_SCRIPT_PATH%\" \"%%1\"" /f
+    reg add "HKCR\SystemFileAssociations\.%%X\shell\Compress Video" /v "SubCommands" /d "Compress.Video.Small;Compress.Video.Medium;Compress.Video.High" /f
 )
+
+:: SUBCOMMANDS FOR EACH LEVEL -------------------------------------
+
+:: 1) Small
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Compress.Video.Small" /ve /d "Higher Quality" /f
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Compress.Video.Small\command" /ve /t REG_EXPAND_SZ /d "\"%PYTHON_PATH%\" \"%COMPRESS_SCRIPT_PATH%\" \"%%1\" small" /f
+
+:: 2) Medium
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Compress.Video.Medium" /ve /d "Medium Quality" /f
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Compress.Video.Medium\command" /ve /t REG_EXPAND_SZ /d "\"%PYTHON_PATH%\" \"%COMPRESS_SCRIPT_PATH%\" \"%%1\" medium" /f
+
+:: 3) High
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Compress.Video.High" /ve /d "Lower Quality" /f
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\Compress.Video.High\command" /ve /t REG_EXPAND_SZ /d "\"%PYTHON_PATH%\" \"%COMPRESS_SCRIPT_PATH%\" \"%%1\" high" /f
+
 
 :: Create command store entries
 
